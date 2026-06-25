@@ -22,7 +22,8 @@
       "Bash(/c/Users/yc/AppData/Local/Temp/apache-maven-3.9.6/bin/mvn clean *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(gh auth *)"
     ]
   }
 }

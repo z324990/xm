@@ -1,0 +1,23 @@
+# Render Blueprint - AI Chat Platform
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: ai-chat-platform
+    env: java
+    plan: free
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/ai-chat-platform-1.0.0.jar
+    envVars:
+      - key: AI_API_KEY
+        value: sk-5075a8927e684b979c135f17db6620ae
+      - key: AI_API_URL
+        value: https://api.deepseek.com/chat/completions
+      - key: AI_MODEL
+        value: deepseek-v4-flash
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:h2:file:/opt/render/project/data/chatdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+      - key: APP_UPLOAD_DIR
+        value: /opt/render/project/uploads
+      - key: JAVA_OPTS
+        value: -Xmx256m -Xms128m
