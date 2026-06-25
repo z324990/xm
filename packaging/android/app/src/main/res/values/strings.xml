@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Chat</string>
+
+    <!-- Error messages -->
+    <string name="error_loading">无法连接到服务器</string>
+    <string name="no_connection">网络连接已断开</string>
+    <string name="downloading">正在下载...</string>
+    <string name="download_started">下载已开始</string>
+
+    <!-- Server setup -->
+    <string name="server_setup_title">服务器连接</string>
+    <string name="server_setup_message">无法连接到 %1$s\n\n请确保服务器已启动，且手机与服务器在同一网络。</string>
+    <string name="server_url_title">服务器地址</string>
+    <string name="connect">连接</string>
+    <string name="retry">重试</string>
+    <string name="settings">设置</string>
+    <string name="cancel">取消</string>
+
+    <!-- Exit -->
+    <string name="exit_title">退出应用</string>
+    <string name="exit_message">确定要退出 AI Chat 吗？</string>
+    <string name="exit_confirm">退出</string>
+</resources>

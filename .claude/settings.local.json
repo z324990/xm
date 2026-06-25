@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe *)",
+      "Read(//d//**)",
+      "Bash(cmd.exe /c \"rmdir /s /q D:\\\\ai-assistant\")",
+      "Bash(cd /tmp)",
+      "Bash(rm -rf /d/ai-assistant)",
+      "Bash(java *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('Pillow available'\\)\")",
+      "Bash(python3 *)",
+      "Bash(ipconfig)",
+      "Bash(netstat -ano)",
+      "Bash(curl -V)",
+      "Bash(curl -sL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -o /tmp/ngrok.zip)",
+      "Bash(unzip -o /tmp/ngrok.zip -d /d/ai-chat-platform/)",
+      "Bash(/d/ai-chat-platform/ngrok.exe http *)",
+      "Bash(curl -s http://localhost:4040/api/tunnels)",
+      "Bash(npx localtunnel *)",
+      "Bash(curl *)",
+      "Bash(mvn clean *)",
+      "Bash(/c/Users/yc/AppData/Local/Temp/apache-maven-3.9.6/bin/mvn clean *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

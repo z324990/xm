@@ -1,0 +1,86 @@
+{
+  "name": "ai-chat-platform",
+  "version": "1.0.0",
+  "description": "AI Chat Platform - 智能对话平台桌面版",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build:win": "electron-builder --win --x64",
+    "build:mac": "electron-builder --mac --x64 --arm64",
+    "build:linux": "electron-builder --linux --x64",
+    "build:all": "electron-builder --win --mac --linux --x64"
+  },
+  "author": "AI Chat Platform",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.chat.aichatplatform",
+    "productName": "AI Chat",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "assets/**/*",
+      "backend/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "../../target/ai-chat-platform-1.0.0.jar",
+        "to": "backend/ai-chat-platform.jar"
+      },
+      {
+        "from": "../../data",
+        "to": "backend/data",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "artifactName": "${productName}-Setup-${version}-win-x64.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "shortcutName": "AI Chat"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.productivity",
+      "artifactName": "${productName}-${version}-mac-${arch}.${ext}"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets",
+      "category": "Utility",
+      "artifactName": "${productName}-${version}-linux-x64.${ext}"
+    }
+  }
+}

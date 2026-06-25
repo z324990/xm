@@ -1,0 +1,66 @@
+server:
+  port: 8080
+  address: 0.0.0.0
+
+spring:
+  application:
+    name: ai-chat-platform
+
+  datasource:
+    url: jdbc:h2:file:./data/chatdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 25MB
+
+# AI API 配置（支持 OpenAI 兼容接口）
+# 当前配置: DeepSeek (https://www.deepseek.com/)
+ai:
+  api:
+    url: ${AI_API_URL:https://api.deepseek.com/chat/completions}
+    key: ${AI_API_KEY:sk-5075a8927e684b979c135f17db6620ae}
+    model: ${AI_MODEL:deepseek-v4-flash}
+
+# 上传文件存储目录
+app:
+  upload:
+    dir: ./uploads
+
+# 联网搜索配置（无需 API Key 开箱即用）
+search:
+  api:
+    key: ${SERPAPI_KEY:}
+
+logging:
+  level:
+    com.chat: DEBUG
