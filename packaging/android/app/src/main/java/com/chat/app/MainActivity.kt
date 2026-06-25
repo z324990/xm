@@ -151,7 +151,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onReceivedSslError(
                     view: WebView?,
                     handler: SslErrorHandler?,
-                    error: SslError?
+                    error: android.net.http.SslError?
                 ) {
                     // For development only - in production, handle properly
                     handler?.proceed()
@@ -317,7 +317,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 });
             })();
-        """.trimIndent())
+        """.trimIndent(), null)
     }
 
     private fun showError(message: String) {

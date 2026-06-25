@@ -15,7 +15,7 @@ android {
         versionName = "1.0.0"
 
         // Server URL - change this to your production server
-        buildConfigField("String", "SERVER_URL", "\"http://10.0.2.2:8080\"")
+        buildConfigField("String", "SERVER_URL", "\"https://ai-chat.loca.lt\"")
         buildConfigField("String", "APP_NAME", "\"AI Chat\"")
     }
 

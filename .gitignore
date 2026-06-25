@@ -23,3 +23,11 @@ Thumbs.db
 # Node
 node_modules/
 dist/
+
+# Android SDK
+packaging/android-sdk/
+packaging/android/local.properties
+
+# Large build files - download separately
+packaging/cmdline-tools.zip
+packaging/android/gradle/wrapper/gradle-wrapper.jar
